@@ -1,0 +1,506 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    min-width: 930px;
+    background-color: #9E9E9E;
+    font-family: system-ui, monospace, sans-serif;
+    font-weight: bold;
+}
+
+/* Custom Scroll */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 #cccccc;
+}
+::-webkit-scrollbar-thumb {
+    background: #212121b0;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #212121; 
+}
+
+
+header {
+    text-align: center;
+    background-color: #212121;
+}
+
+h2 {
+    padding: 7px;
+    margin: 0;
+    color: #fff;
+}
+
+.content {
+    width: 100%;
+    height: calc(100vh - 125px - 47px);
+    background-color: #f6fdff;
+    overflow: auto;
+    padding-bottom: 20px;
+}
+
+.titlePlano {
+    text-align: center;
+    font-size: 22px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.setPositions {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+}
+
+.position {
+    padding: 40px 40px;
+    background-color: #7fa2a97d;
+    border: solid 2px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 5px;
+    font-weight: normal;
+    box-shadow: 5px 5px 3px -2px rgb(0 0 0 / 40%);
+}
+
+.toolbar {
+    width: 100%;
+    min-width: 930px;
+    height: 100px;
+    background-color: #9E9E9E;
+    border-top: 2px solid #212121;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+}
+
+.formInsertDeletePlanos {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.planos {
+    width: 54%;
+    min-width: 500px;
+    background-color: #ffffff7a;
+    text-align: center;
+    border-left: 2px solid #212121;
+    border-right: 2px solid #212121;
+}
+
+#titlePlanos {
+    padding: 0;
+    margin: 0;
+}
+
+.activePlanos {
+    width: 97%;
+    height: 71px;
+    overflow-x: overlay;
+    margin-top: 3px;
+    padding: 0 5px;
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+}
+.activePlanos form{
+    margin-bottom: 20px;
+}
+
+/* Custom Scroll */
+.activePlanos::-webkit-scrollbar {
+    height: 12px;
+}
+.activePlanos::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+.activePlanos::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 5px;
+}
+.activePlanos::-webkit-scrollbar-thumb:hover {
+    background: #212121; 
+}
+
+
+.createPositions {
+    height: 100%;
+    margin-left: 10px;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+}
+.createPositions p {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 180px;
+}
+
+.createPositions .addDeletePositions {
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+.addDeletePositions div {
+    text-align: center;
+    width: 10%;
+    padding: 10px;
+    margin-right: 5px;
+    color: white;
+}
+
+.addDelButtons {
+	background-color:#212121;
+	border-radius:8px;
+	border: 2px solid #607D8B;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:10px 31px;
+	text-decoration:none;
+	text-shadow:7px 4px 6px #5b617894;
+}
+.addDelButtons:hover {
+	background-color:#607D8B;
+	border: 2px solid #212121;
+}
+
+
+.formAddDeletePlano {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.textNamePlano {
+    height: 20px;
+    text-align: center;
+    margin-bottom: 5px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.addAndDelete {
+    width: 100%;
+    height: auto;
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+}
+
+.noPlano {
+    width: 100%;
+    height: 100%;
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.noPlano p {
+    font-weight: bold;
+    font-size: 30px;
+    color: #00000060;
+}
+
+
+.butonDeletePlano {
+    position: absolute;
+    top: 23px;
+    right: calc(23%);
+	background-color:#212121;
+	border-radius:8px;
+	border: 1px solid #607D8B;
+	display:inline-block;
+    justify-content: center;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+    margin-left: 5px;
+	padding: 5px 10px;
+	text-decoration:none;
+	text-shadow:7px 4px 6px #5b6178;
+}
+
+.butonDeletePlano:hover {
+	background-color:#607D8B;
+	border: 2px solid #212121;
+}
+
+.buttonPlano {
+    margin: 5px;
+}
+
+.myButton {
+	background-color:#212121;
+	border-radius:8px;
+	border: 2px solid #607D8B;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:10px 31px;
+	text-decoration:none;
+	text-shadow:7px 4px 6px #5b617894;
+}
+.myButton:hover {
+	background-color:#607D8B;
+	border: 2px solid #212121;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+/* ToolTip Position*/
+.tooltipPosition{
+    min-width: 60px;
+    font-weight: normal;
+    color:black;
+    position: relative;
+    text-decoration: none;
+}
+.tooltipPosition:hover {
+    text-decoration: underline;
+}
+
+.activo {
+    display: inline-block;
+}
+.tooltipBoxPosition {
+    position: absolute;
+    width: 200px;
+    background-color:#9E9E9E;
+    line-height: 20px;
+    z-index: 500;
+    text-align: center;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    left: 20px;
+    top: 107px;
+    display: none;
+}
+
+.tooltipBoxPosition.activo {
+    display: inline-block;
+    border: 2px solid black;
+}
+.tooltipBoxPosition::before {
+    content: "";
+    display: block;
+    border-bottom: 7px solid #000000;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    position: absolute;
+    top: -7px;
+    left: calc(45%);
+}
+
+.tooltipBoxPosition .titleType {
+    font-weight: bold;
+}
+
+.tooltipBoxPosition .logoEdit {
+    width: 0px;
+    height: 5px;
+    position: relative;
+    left: 178px;
+    cursor: pointer;
+}
+
+.tooltipBoxPosition .modifyPositionValues {
+    height: 27px;
+    margin-top: 10px;
+    padding: 3px 30px;
+}
+
+.tooltipBoxPosition .contentInputsValues {
+    display: inline-flex;
+}
+
+.tooltipBoxPosition .buttonCopy {
+    width: 25px;
+    height: 25px;
+    text-align: right;
+    cursor: pointer;
+    margin-left: 3px;
+}
+
+/* Boton mostrar ToolTip */
+.showToolTip {
+    opacity: 0;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background-color:#43565fad;
+    line-height: 20px;
+    z-index: 400;
+    text-align: center;
+    color: fff;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    left: 73%;
+    top: 72%;
+    cursor: pointer;
+}
+.showToolTip:hover {
+    background-color:#43565f;
+}
+.tooltipPosition:hover .showToolTip {
+    opacity: 1;
+}
+
+
+/* ToolTip Add Position*/
+.tooltipAddPosition{
+    font-weight: normal;
+    color:black;
+    position: relative;
+    text-decoration: none;
+}
+.tooltipBoxAdd {
+    display: none;
+    width: 300px;
+    position: absolute;
+    background-color:#656565;
+    line-height: 20px;
+    z-index: 500;
+    text-align: center;
+    color: fff;
+    font-size: 14px;
+    padding: 10px 10px;
+    border-radius: 7px;
+    left: -255px;
+    bottom: 30px;
+    border: 2px solid black;
+    cursor: auto;
+}
+.tooltipAddPosition:hover .tooltipBoxAdd {
+    display: inline-block;
+}
+.tooltipBoxAdd::before {
+    content: "";
+    display: block;
+    border-top: 7px solid #000000;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    position: absolute;
+    bottom: -7px;
+    left: calc(83%);
+}
+
+
+/* ToolTip Boton Eliminar Plano*/
+.tooltipDeletePlano{
+    font-weight: normal;
+    color:black;
+    position: relative;
+    text-decoration: none;
+}
+.tooltipDeletePlano:hover {
+    text-decoration: underline;
+}
+.tooltiBoxpDeletePlano {
+    display: none;
+    width: 300px;
+    position: absolute;
+    background-color:#656565;
+    line-height: 20px;
+    z-index: 500;
+    text-align: center;
+    color: fff;
+    font-size: 14px;
+    padding: 10px 10px;
+    border-radius: 7px;
+    left: -20px;
+    bottom: 39px;
+    border: 2px solid black;
+}
+.tooltipDeletePlano:hover .tooltiBoxpDeletePlano {
+    display: inline-block;
+}
+.tooltiBoxpDeletePlano::before {
+    content: "";
+    display: block;
+    border-top: 7px solid #000000;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    position: absolute;
+    bottom: -7px;
+    left: calc(10%);
+}
+
+
+
+.selection {
+    border-radius: 5px;
+    text-align: center;
+    padding: 4px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.formAddPositions {
+    font-weight: bold;
+}
+
+.inputText {
+    border-radius: 5px;
+    width: 130px;
+    padding: 4px;
+    text-align: center;
+}
+
+.labelTitle {
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.inputNamePlano {
+    display: none;
+}
+
+
+.inputsCUSerial {
+    width: 150px;
+    height: 23px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+
+@media (max-width: 929px) {
+    h2 {
+        padding: 2px;
+    }
+}
