@@ -134,3 +134,10 @@ function validarFormDelPosition() {
         }
     }
 }
+
+// Mostrar Notificación
+function showNotification() {
+    var notify = document.getElementById("snackbar");
+    notify.className = 'show';
+    setTimeout(() => { notify.classList.remove('show'); }, 3000);
+  }

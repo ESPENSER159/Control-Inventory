@@ -346,12 +346,61 @@ h2 {
 }
 
 .tooltipBoxPosition .buttonCopy {
-    width: 25px;
-    height: 25px;
-    text-align: right;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     margin-left: 3px;
+    margin-top: 2px;
+    border-radius: 4px;
 }
+
+.tooltipBoxPosition .buttonCopy:hover {
+    background-color: #21212147;
+}
+
+
+/* Barra de notificación */
+#snackbar {
+    visibility: hidden;
+    min-width: 188px;
+    margin-left: -90px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 80px;
+    font-size: 16px;
+  }
+  
+  #snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;} 
+    to {bottom: 80px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 80px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 80px; opacity: 1;} 
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 80px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
 
 /* Boton mostrar ToolTip */
 .showToolTip {

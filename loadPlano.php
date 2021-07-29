@@ -59,8 +59,8 @@ while($row = mysqli_fetch_assoc($positions)){
                 <div class="contentInputsValues">
                     <input class="inputsCUSerial" type="text" name="TorreCU" value="<?php echo $row2["placa_equipo"];?>" disabled>
 
-                    <div class="buttonCopy">
-                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 10000 10000;" xml:space="preserve">
+                    <div class="buttonCopy" onclick="showNotification()">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
                         <g>
                             <g>
                                 <path d="M314.25,85.4h-227c-21.3,0-38.6,17.3-38.6,38.6v325.7c0,21.3,17.3,38.6,38.6,38.6h227c21.3,0,38.6-17.3,38.6-38.6V124

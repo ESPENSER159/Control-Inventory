@@ -17,6 +17,8 @@
             include("conexion.php");
             include("operations.php");
         ?>
+
+        <div id="snackbar">Copiado...</div>
     </div>
 
     <div class="toolbar">
@@ -75,7 +77,6 @@
                 <?php } ?>
             </div>
         </div>
-
 
         <div class="createPositions">
             <div>
