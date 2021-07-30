@@ -139,7 +139,7 @@ function validarFormDelPosition() {
 function showNotification(cuSerial) {
     var copyText = document.getElementById(cuSerial);
     copyText.select();
-    copyText.setSelectionRange(0, 20);
+    copyText.setSelectionRange(0, 50);
     document.execCommand("copy");
     console.log("Copiado: " + copyText.value);
 
