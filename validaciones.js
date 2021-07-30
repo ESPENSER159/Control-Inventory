@@ -137,10 +137,13 @@ function validarFormDelPosition() {
 
 // Mostrar Notificación y copiar valor al portapapeles
 function showNotification(cuSerial) {
+    var copyText = document.getElementById(cuSerial);
+    copyText.select();
+    copyText.setSelectionRange(0, 20);
+    document.execCommand("copy");
+    console.log("Copiado: " + copyText.value);
+
     const notify = document.getElementById("snackbar");
-
-    document.execCommand('copy', cuSerial);
-
     notify.className = 'show';
     setTimeout(() => { notify.classList.remove('show'); }, 3000);
 }
