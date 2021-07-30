@@ -1,10 +1,10 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Inventario</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="validaciones.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -50,7 +50,7 @@
 
                         <label class="labelTitle">Eliminar plano: <?php echo $namePlano;?></label><br>
 
-                        <input class="inputText inputNamePlano" name="deletePlano" value="<?php echo $namePlano;?>" type="text" autocomplete="off">
+                        <input class="inputText inputNamePlano" placeholder="plano" name="deletePlano" value="<?php echo $namePlano;?>" type="text" autocomplete="off">
 
                         <br>
                         <input class="myButton" type="submit" value="Eliminar">
@@ -94,7 +94,7 @@
                             <form class="formAddPositions" name="formAddPosition" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" onsubmit="return validarFormAddPosition()" method="GET">
                                 <label class="labelTitle">Crear una posición</label><br><br>
                                 
-                                <input class="inputText inputNamePlano" name="nombrePlano" value="<?php echo $namePlano;?>" type="text" autocomplete="off">
+                                <input class="inputText inputNamePlano" placeholder="plano" name="nombrePlano" value="<?php echo $namePlano;?>" type="text" autocomplete="off">
 
                                 <label>Nombre posición</label><br>
                                 <input class="inputText" name="onePosition" placeholder="Nombre posición" type="text" autocomplete="off"><br><br>
@@ -104,7 +104,7 @@
                             <form class="formAddPositions" name="formAddPositions" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" onsubmit="return validarFormAddPositions()" method="GET">
                                 <label class="labelTitle">Crear varias posiciones</label><br><br>
                                 
-                                <input class="inputText inputNamePlano" name="nombrePlano" value="<?php echo $namePlano;?>" type="text" autocomplete="off">
+                                <input class="inputText inputNamePlano" placeholder="plano" name="nombrePlano" value="<?php echo $namePlano;?>" type="text" autocomplete="off">
 
                                 <label>Nomenclatura</label><br>
                                 <input class="inputText" placeholder="Nomenclatura" name="nomen" type="text" autocomplete="off"><br>
@@ -126,7 +126,7 @@
                                 <label class="labelTitle">Eliminar una posición</label><br><br>
                                 <label>De: <?php echo $namePlano;?></label>
 
-                                <input class="inputText inputNamePlano" name="nombrePlano" value="<?php echo $namePlano;?>" type="text" autocomplete="off">
+                                <input class="inputText inputNamePlano" placeholder="plano" name="nombrePlano" value="<?php echo $namePlano;?>" type="text" autocomplete="off">
 
                                 <br><br>
                                 <label>Nombre posición</label><br>
@@ -139,5 +139,6 @@
             </div>
         </div>
     </div>
+    <script type="application/javascript" src="validaciones.js"></script>
 </body>
 </html>

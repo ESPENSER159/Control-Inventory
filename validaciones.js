@@ -135,9 +135,12 @@ function validarFormDelPosition() {
     }
 }
 
-// Mostrar Notificación
-function showNotification() {
-    var notify = document.getElementById("snackbar");
+// Mostrar Notificación y copiar valor al portapapeles
+function showNotification(cuSerial) {
+    const notify = document.getElementById("snackbar");
+
+    document.execCommand('copy', cuSerial);
+
     notify.className = 'show';
     setTimeout(() => { notify.classList.remove('show'); }, 3000);
-  }
+}
