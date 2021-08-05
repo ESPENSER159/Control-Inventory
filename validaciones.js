@@ -136,15 +136,21 @@ function validarFormDelPosition() {
 }
 
 // Mostrar Notificación y copiar valor al portapapeles
-function showNotification(cuSerial) {
+function copyValues(cuSerial) {
     var copyText = document.getElementById(cuSerial);
     copyText.select();
     copyText.setSelectionRange(0, 50);
     document.execCommand("copy");
-    console.log("Copiado: " + copyText.value);
 
+    snackbar("Copiado...");
+}
+
+
+// Mostrar Snackbar
+function snackbar(textShow) {
     const notify = document.getElementById("snackbar");
     notify.className = 'show';
+    notify.innerHTML = textShow;
     setTimeout(() => { notify.classList.remove('show'); }, 3000);
 }
 
@@ -168,4 +174,25 @@ function enableEditable(cuPC, serialPC, cuMoni, serialMoni, buttonSave) {
 
     buttonGuardar.style.display = "inline";
 
+}
+
+
+// Validaciones boton "Guardar" para el cambio de datos.
+function saveChanges(cuPC, serialPC, cuMoni, serialMoni, buttonSave) {
+    const inputCUPC = document.getElementById(cuPC);
+    const inputSerialPC = document.getElementById(serialPC);
+    const inputCUMoni = document.getElementById(cuMoni);
+    const inputSerialMoni = document.getElementById(serialMoni);
+    const buttonGuardar = document.getElementById(buttonSave);
+
+    inputCUPC.setAttribute('readonly', 'redonly');
+    inputCUPC.style.backgroundColor = "#d6d5d5";
+    inputSerialPC.setAttribute('readonly', 'redonly');
+    inputSerialPC.style.backgroundColor = "#d6d5d5";
+    inputCUMoni.setAttribute('readonly', 'redonly');
+    inputCUMoni.style.backgroundColor = "#d6d5d5";
+    inputSerialMoni.setAttribute('readonly', 'redonly');
+    inputSerialMoni.style.backgroundColor = "#d6d5d5";
+
+    buttonGuardar.style.display = "none";
 }

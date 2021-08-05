@@ -336,6 +336,10 @@ h2 {
     cursor: pointer;
 }
 
+.logoEdit .svgEdit:hover {
+    background-color: #21212147;
+}
+
 .tooltipBoxPosition .modifyPositionValues {
     display: none;
     height: 27px;

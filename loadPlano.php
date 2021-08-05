@@ -52,7 +52,7 @@ while($row = mysqli_fetch_assoc($positions)){
             if(strlen($row2["placa_equipo"]) != 0) {
                 ?>
                 <div class="logoEdit" onclick="enableEditable('<?php if($row2['placa_equipo'] == 'VACIO'){echo 'VACIO-Torre-cu-'.$autoincrement;}else{echo $row2['placa_equipo'];}; ?>', '<?php if($row2['serial_equipo'] == 'VACIO'){echo 'VACIO-Torre-Serial-'.$autoincrement;}else{echo $row2['serial_equipo'];}; ?>', '<?php if($row2['placa_m'] == 'VACIO'){echo 'VACIO-Moni-cu-'.$autoincrement;}else{echo $row2['placa_m'];}; ?>', '<?php if($row2['serial_m'] == 'VACIO'){echo 'VACIO-Moni-Serial-'.$autoincrement;}else{echo $row2['serial_m'];}; ?>','<?php echo 'buttonPosition_'.$row['posicion'];?>')">
-                    <svg viewBox="0 0 512 511" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="svgEdit" viewBox="0 0 512 511" xmlns="http://www.w3.org/2000/svg">
                         <path d="m405.332031 256.484375c-11.796875 0-21.332031 9.558594-21.332031 21.332031v170.667969c0 11.753906-9.558594 21.332031-21.332031 21.332031h-298.667969c-11.777344 0-21.332031-9.578125-21.332031-21.332031v-298.667969c0-11.753906 9.554687-21.332031 21.332031-21.332031h170.667969c11.796875 0 21.332031-9.558594 21.332031-21.332031 0-11.777344-9.535156-21.335938-21.332031-21.335938h-170.667969c-35.285156 0-64 28.714844-64 64v298.667969c0 35.285156 28.714844 64 64 64h298.667969c35.285156 0 64-28.714844 64-64v-170.667969c0-11.796875-9.539063-21.332031-21.335938-21.332031zm0 0"/>
                         <path d="m200.019531 237.050781c-1.492187 1.492188-2.496093 3.390625-2.921875 5.4375l-15.082031 75.4375c-.703125 3.496094.40625 7.101563 2.921875 9.640625 2.027344 2.027344 4.757812 3.113282 7.554688 3.113282.679687 0 1.386718-.0625 2.089843-.210938l75.414063-15.082031c2.089844-.429688 3.988281-1.429688 5.460937-2.925781l168.789063-168.789063-75.414063-75.410156zm0 0"/>
                         <path d="m496.382812 16.101562c-20.796874-20.800781-54.632812-20.800781-75.414062 0l-29.523438 29.523438 75.414063 75.414062 29.523437-29.527343c10.070313-10.046875 15.617188-23.445313 15.617188-37.695313s-5.546875-27.648437-15.617188-37.714844zm0 0"/>
@@ -64,7 +64,7 @@ while($row = mysqli_fetch_assoc($positions)){
                 <div class="contentInputsValues">
                     <input id="<?php if($row2['placa_equipo'] == 'VACIO'){echo 'VACIO-Torre-cu-'.$autoincrement;}else{echo $row2['placa_equipo'];}; ?>" class="inputsCUSerial" title="cu" type="text" name="TorreCU" value="<?php echo $row2["placa_equipo"];?>" readonly>
 
-                    <div class="buttonCopy" onclick="showNotification('<?php if($row2['placa_equipo'] == 'VACIO'){echo 'VACIO-Torre-cu-'.$autoincrement;}else{echo $row2['placa_equipo'];}; ?>')">
+                    <div class="buttonCopy" onclick="copyValues('<?php if($row2['placa_equipo'] == 'VACIO'){echo 'VACIO-Torre-cu-'.$autoincrement;}else{echo $row2['placa_equipo'];}; ?>')">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
                         <g>
                             <g>
@@ -83,7 +83,7 @@ while($row = mysqli_fetch_assoc($positions)){
                 <div class="contentInputsValues">
                     <input id="<?php if($row2['serial_equipo'] == 'VACIO'){echo 'VACIO-Torre-Serial-'.$autoincrement;}else{echo $row2['serial_equipo'];}; ?>" class="inputsCUSerial" title="serial" type="text" name="TorreCU" value="<?php echo $row2["serial_equipo"];?>" readonly>
 
-                    <div class="buttonCopy" onclick="showNotification('<?php if($row2['serial_equipo'] == 'VACIO'){echo 'VACIO-Torre-Serial-'.$autoincrement;}else{echo $row2['serial_equipo'];}; ?>')">
+                    <div class="buttonCopy" onclick="copyValues('<?php if($row2['serial_equipo'] == 'VACIO'){echo 'VACIO-Torre-Serial-'.$autoincrement;}else{echo $row2['serial_equipo'];}; ?>')">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
                         <g>
                             <g>
@@ -105,7 +105,7 @@ while($row = mysqli_fetch_assoc($positions)){
                 <div class="contentInputsValues">
                     <input id="<?php if($row2['placa_m'] == 'VACIO'){echo 'VACIO-Moni-cu-'.$autoincrement;}else{echo $row2['placa_m'];}; ?>" class="inputsCUSerial" title="cu" type="text" name="TorreCU" value="<?php echo $row2["placa_m"];?>" readonly>
 
-                    <div class="buttonCopy" onclick="showNotification('<?php if($row2['placa_m'] == 'VACIO'){echo 'VACIO-Moni-cu-'.$autoincrement;}else{echo $row2['placa_m'];}; ?>')">
+                    <div class="buttonCopy" onclick="copyValues('<?php if($row2['placa_m'] == 'VACIO'){echo 'VACIO-Moni-cu-'.$autoincrement;}else{echo $row2['placa_m'];}; ?>')">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
                         <g>
                             <g>
@@ -125,7 +125,7 @@ while($row = mysqli_fetch_assoc($positions)){
                 <div class="contentInputsValues">
                     <input id="<?php if($row2['serial_m'] == 'VACIO'){echo 'VACIO-Moni-Serial-'.$autoincrement;}else{echo $row2['serial_m'];}; ?>" class="inputsCUSerial" title="serial" type="text" name="TorreCU" value="<?php echo $row2["serial_m"];?>" readonly>
 
-                    <div class="buttonCopy" onclick="showNotification('<?php if($row2['serial_m'] == 'VACIO'){echo 'VACIO-Moni-Serial-'.$autoincrement;}else{echo $row2['serial_m'];}; ?>')">
+                    <div class="buttonCopy" onclick="copyValues('<?php if($row2['serial_m'] == 'VACIO'){echo 'VACIO-Moni-Serial-'.$autoincrement;}else{echo $row2['serial_m'];}; ?>')">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" xml:space="preserve">
                         <g>
                             <g>
@@ -141,7 +141,7 @@ while($row = mysqli_fetch_assoc($positions)){
 
                 </div>
 
-                <input id="<?php echo 'buttonPosition_'.$row['posicion'];?>" type="submit" class="myButton modifyPositionValues" value="Guardar">
+                <input id="<?php echo 'buttonPosition_'.$row['posicion'];?>" type="submit" class="myButton modifyPositionValues" value="Guardar" onclick="saveChanges('<?php if($row2['placa_equipo'] == 'VACIO'){echo 'VACIO-Torre-cu-'.$autoincrement;}else{echo $row2['placa_equipo'];}; ?>', '<?php if($row2['serial_equipo'] == 'VACIO'){echo 'VACIO-Torre-Serial-'.$autoincrement;}else{echo $row2['serial_equipo'];}; ?>', '<?php if($row2['placa_m'] == 'VACIO'){echo 'VACIO-Moni-cu-'.$autoincrement;}else{echo $row2['placa_m'];}; ?>', '<?php if($row2['serial_m'] == 'VACIO'){echo 'VACIO-Moni-Serial-'.$autoincrement;}else{echo $row2['serial_m'];}; ?>','<?php echo 'buttonPosition_'.$row['posicion'];?>')">
 
                 <br>
             <?php } else {?>
