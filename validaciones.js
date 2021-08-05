@@ -147,3 +147,25 @@ function showNotification(cuSerial) {
     notify.className = 'show';
     setTimeout(() => { notify.classList.remove('show'); }, 3000);
 }
+
+
+// Habilitar edición de campos
+function enableEditable(cuPC, serialPC, cuMoni, serialMoni, buttonSave) {
+    const inputCUPC = document.getElementById(cuPC);
+    const inputSerialPC = document.getElementById(serialPC);
+    const inputCUMoni = document.getElementById(cuMoni);
+    const inputSerialMoni = document.getElementById(serialMoni);
+    const buttonGuardar = document.getElementById(buttonSave);
+
+    inputCUPC.removeAttribute('readonly');
+    inputCUPC.style.backgroundColor = "white";
+    inputSerialPC.removeAttribute('readonly');
+    inputSerialPC.style.backgroundColor = "white";
+    inputCUMoni.removeAttribute('readonly');
+    inputCUMoni.style.backgroundColor = "white";
+    inputSerialMoni.removeAttribute('readonly');
+    inputSerialMoni.style.backgroundColor = "white";
+
+    buttonGuardar.style.display = "inline";
+
+}
