@@ -22,6 +22,7 @@ function validarFormAddPlano() {
     }
 }
 
+
 // Confirmacion al eliminar un plano
 function validarFormDelPlano() {
     var deletePlano = confirm("¿Esta seguro de eliminar el plano?");
@@ -35,7 +36,6 @@ function validarFormDelPlano() {
 
 
 // Formulario añadir posiciones
-
 // Form add only one position
 function validarFormAddPosition() {
     let namePlano = document.forms["formAddPosition"]["onePosition"].value;
@@ -135,6 +135,7 @@ function validarFormDelPosition() {
     }
 }
 
+
 // Mostrar Notificación y copiar valor al portapapeles
 function copyValues(cuSerial) {
     var copyText = document.getElementById(cuSerial);
@@ -155,7 +156,9 @@ function snackbar(textShow) {
 }
 
 
-// Habilitar edición de campos
+
+// Habilitar o deshabilitar edición de campos.
+var activeButton = 0;
 function enableEditable(cuPC, serialPC, cuMoni, serialMoni, buttonSave) {
     const inputCUPC = document.getElementById(cuPC);
     const inputSerialPC = document.getElementById(serialPC);
@@ -163,16 +166,36 @@ function enableEditable(cuPC, serialPC, cuMoni, serialMoni, buttonSave) {
     const inputSerialMoni = document.getElementById(serialMoni);
     const buttonGuardar = document.getElementById(buttonSave);
 
-    inputCUPC.removeAttribute('readonly');
-    inputCUPC.style.backgroundColor = "white";
-    inputSerialPC.removeAttribute('readonly');
-    inputSerialPC.style.backgroundColor = "white";
-    inputCUMoni.removeAttribute('readonly');
-    inputCUMoni.style.backgroundColor = "white";
-    inputSerialMoni.removeAttribute('readonly');
-    inputSerialMoni.style.backgroundColor = "white";
+    const attribute = 'readonly';
+    const colorEnable = 'white';
+    const colorDisable = '#d6d5d5';
 
-    buttonGuardar.style.display = "inline";
+    if(activeButton === 0) {
+        inputCUPC.removeAttribute(attribute);
+        inputCUPC.style.backgroundColor = colorEnable;
+        inputSerialPC.removeAttribute(attribute);
+        inputSerialPC.style.backgroundColor = colorEnable;
+        inputCUMoni.removeAttribute(attribute);
+        inputCUMoni.style.backgroundColor = colorEnable;
+        inputSerialMoni.removeAttribute(attribute);
+        inputSerialMoni.style.backgroundColor = colorEnable;
+
+        buttonGuardar.style.display = "inline";
+        activeButton++;
+    } else if(activeButton === 1) {
+        inputCUPC.setAttribute(attribute, attribute);
+        inputCUPC.style.backgroundColor = colorDisable;
+        inputSerialPC.setAttribute(attribute, attribute);
+        inputSerialPC.style.backgroundColor = colorDisable;
+        inputCUMoni.setAttribute(attribute, attribute);
+        inputCUMoni.style.backgroundColor = colorDisable;
+        inputSerialMoni.setAttribute(attribute, attribute);
+        inputSerialMoni.style.backgroundColor = colorDisable;
+
+        buttonGuardar.style.display = "none";
+
+        activeButton--;
+    }
 
 }
 
@@ -195,4 +218,24 @@ function saveChanges(cuPC, serialPC, cuMoni, serialMoni, buttonSave) {
     inputSerialMoni.style.backgroundColor = "#d6d5d5";
 
     buttonGuardar.style.display = "none";
+
+    snackbar("Guardado");
+}
+
+
+// Validar ingreso de datos en el formulario de modificar datos de equipo.
+function validarFormModifyDates() {
+    const cuTorre = document.forms["modifyDatePosition"]["torreCU"];
+    const serialTorre = document.forms["modifyDatePosition"]["torreSerial"];
+    const cuMoni = document.forms["modifyDatePosition"]["moniCU"];
+    const serialMoni = document.forms["modifyDatePosition"]["moniSerial"];
+
+    // Los campos no pueden ser vaciós.
+    if (cuTorre.value == "" || cuTorre.value.length <= 3 || serialTorre.value == "" || serialTorre.value.length <= 3 || cuMoni.value == "" || cuMoni.value.length <= 3 || serialMoni.value == "" || serialMoni.value.length <= 3) {
+        snackbar("Los campos no deben ser vacios y no deden ser inferiores a 4 caracteres.");
+        return false;
+    }else {
+        console.log("Datos correctos (por ahora)");
+        saveChanges(cuTorre.value, serialTorre.value, cuMoni.value, serialMoni.value, buttonSave.value);
+    }
 }

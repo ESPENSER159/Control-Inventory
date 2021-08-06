@@ -18,7 +18,7 @@
     if($resultado){
         echo '<script>';
         //echo 'alert("Se agrego el plano");';
-        echo 'window.location="/";';
+        echo 'window.location="/Inventory/index.php?nombrePlano='.$nombrePlano.'";';
         echo '</script>';
     } else{
         echo '<script>';
