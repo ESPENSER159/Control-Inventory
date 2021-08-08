@@ -52,7 +52,7 @@ while($row = mysqli_fetch_assoc($pisosQueryResult)) {
     $largo = $row["width"];
     $alto = $row["height"];
 }
-///////////////////////////////////
+//////////////////////////////////
 ?>
 </div>
 
