@@ -4,7 +4,7 @@
 
     $nombrePlano = $_GET["nombrePlano"];
 
-    $insertPlano = "INSERT INTO piso (piso) VALUES ('$nombrePlano');";
+    $insertPlano = "INSERT INTO piso (piso, width, height) VALUES ('$nombrePlano', 20, 20);";
 
     $crearTable = "CREATE TABLE `$nombrePlano` (
         `id_piso` int(3),

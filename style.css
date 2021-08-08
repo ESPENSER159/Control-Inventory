@@ -43,7 +43,6 @@ h2 {
     height: calc(100vh - 125px - 47px);
     background-color: #f6fdff;
     overflow: auto;
-    padding-bottom: 20px;
 }
 
 .titlePlano {
@@ -58,17 +57,6 @@ h2 {
     flex-wrap: wrap;
     align-content: flex-start;
     justify-content: center;
-}
-
-.position {
-    padding: 40px 40px;
-    background-color: #7fa2a97d;
-    border: solid 2px;
-    text-align: center;
-    border-radius: 10px;
-    margin: 5px;
-    font-weight: normal;
-    box-shadow: 5px 5px 3px -2px rgb(0 0 0 / 40%);
 }
 
 .toolbar {
@@ -554,6 +542,18 @@ h2 {
     background-color: #d6d5d5;
 }
 
+table {
+    border-spacing: 0;
+}
+
+.position {
+    width: 99px;
+    height: 98px;
+    background-color: #f6fdff;
+    text-align: center;
+    font-weight: normal;
+    border: 1px solid #cccccc;
+}
 
 @media (max-width: 929px) {
     h2 {

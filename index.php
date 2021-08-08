@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Inventario</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
@@ -12,14 +13,14 @@
         <h2>Inventario</h2>
     </header>
 
-    <div class="content">
+    <section class="content">
         <?php
             include("conexion.php");
             include("operations.php");
         ?>
 
-        <div id="snackbar">Copiado...</div>
-    </div>
+        <div id="snackbar"></div>
+    </section>
 
     <div class="toolbar">
         <div class="formInsertDeletePlanos">

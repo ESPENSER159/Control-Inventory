@@ -53,7 +53,7 @@ if(isset($_GET['deletePlano'])){
 
     if($resultadoDelTorresMonitores && $resultadoDelPositions && $resultadoDelPiso){
         echo '<script>';
-        echo 'window.location="/";';
+        echo 'window.location="/Inventory/";';
         echo 'console.log("Se elimino el plano: '.$nameDelPlano.'")';
         echo '</script>';
 
